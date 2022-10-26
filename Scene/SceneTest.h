@@ -19,7 +19,7 @@ public:
 	virtual void draw() override;
 
 private:
-	static const int kObjectNum = 4;
+	static const int kObjectNum = 1;
 private:
 	ObjectCircle	m_circle[kObjectNum];
 };
