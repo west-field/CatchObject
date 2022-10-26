@@ -31,5 +31,6 @@ private:
 	int		m_color;
 
 	//つかみ情報
-	bool m_isCatch;
+	bool m_isCatch;		//掴まれているかどうか
+	Vec2 m_carchOffset;	//掴んだ位置から中心へのベクトル
 };

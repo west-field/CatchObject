@@ -13,7 +13,8 @@ namespace
 ObjectCircle::ObjectCircle() :
 	m_pSceneTest(nullptr),
 	m_color(GetColor(255, 255, 255)),
-	m_isCatch(false)
+	m_isCatch(false),
+	m_carchOffset()
 {
 }
 ObjectCircle::~ObjectCircle()
@@ -41,6 +42,7 @@ void ObjectCircle::update()
 	if (Mouse::isTriggerLeft() && isCatchEnable(mousePos))
 	{
 		m_isCatch = true;
+		m_carchOffset = m_pos - mousePos;
 	}
 	if (!Mouse::isPressLeft())
 	{
@@ -48,7 +50,7 @@ void ObjectCircle::update()
 	}
 	if (m_isCatch)
 	{
-		m_pos = mousePos;
+		m_pos = mousePos + m_carchOffset;
 	}
 }
 
